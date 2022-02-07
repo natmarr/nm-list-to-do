@@ -39,12 +39,18 @@
 
 .tasks__button--remove {
     background: hsl(348, 83%, 47%);
+    background-image: url(../images/bin.svg);
+    background-size: contain;
 }
 
 .tasks__button--remove:hover {
     background: hsl(348, 83%, 52%);
+    background-image: url(../images/bin.svg);
+    background-size: contain;
 }
 
 .tasks__button--remove:active {
     background: hsl(348, 83%, 57%);
+    background-image: url(../images/bin.svg);
+    background-size: contain;
 }
