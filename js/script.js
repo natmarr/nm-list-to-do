@@ -1,6 +1,12 @@
 {
     const tasks = [];
 
+    const addNewTask = (newTaskContent) => {
+        tasks.push({ content: newTaskContent});
+
+        render();
+    };
+
     const render = () => {
         let tasksListHTMLContent = "";
 
@@ -22,11 +28,7 @@
 
     };
 
-    const addNewTask = (newTaskContent) => {
-        tasks.push({ content: newTaskContent});
 
-        render();
-    };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
