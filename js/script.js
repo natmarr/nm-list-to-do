@@ -1,10 +1,5 @@
 {
-    const tasks = [
-        {
-            content: "test",
-            done: true,
-        },
-    ];
+    const tasks = [];
 
     const render = () => {
         let tasksListHTMLContent = "";
