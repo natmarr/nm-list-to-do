@@ -6,6 +6,11 @@
         render();
     };
 
+    const removeTask = (taskIndex) => {
+        tasks.splice(taskIndex, 1);
+        render();
+    };
+
     const addNewTask = (newTaskContent) => {
         tasks.push({ content: newTaskContent });
 
@@ -22,6 +27,16 @@
         });
     };
 
+    const bindRemoveEvents = () => {
+        const removeButtons = document.querySelectorAll(".js-remove");
+
+        removeButtons.forEach((removeButton, taskIndex) => {
+            removeButton.addEventListener("click", () => {
+                removeTask(taskIndex);
+            });
+        });
+    };
+
     const render = () => {
         let tasksListHTMLContent = "";
 
@@ -34,7 +49,7 @@
                 <span class="${task.done ? "tasks__content--done" : ""}">
                 ${task.content}
                 </span>
-                <button class="tasks__button tasks__button--remove">X</button>
+                <button class="tasks__button tasks__button--remove js-remove">X</button>
             </li>    
             `;
         }
@@ -42,6 +57,7 @@
         document.querySelector(".js-tasks").innerHTML = tasksListHTMLContent;
 
         bindToggleDoneEvents();
+        bindRemoveEvents();
 
     };
 
