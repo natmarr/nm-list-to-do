@@ -1,10 +1,25 @@
 {
     const tasks = [];
 
+    const toggleTaskDone = (taskIndex) => {
+        tasks[taskIndex].done = !tasks[taskIndex].done;
+        render();
+    };
+
     const addNewTask = (newTaskContent) => {
-        tasks.push({ content: newTaskContent});
+        tasks.push({ content: newTaskContent });
 
         render();
+    };
+
+    const bindToggleDoneEvents = () => {
+        const toggleDoneButtons = document.querySelectorAll(".js-toggleDone");
+
+        toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
+            toggleDoneButton.addEventListener("click", () => {
+                toggleTaskDone(taskIndex);
+            });
+        });
     };
 
     const render = () => {
@@ -13,7 +28,7 @@
         for (const task of tasks) {
             tasksListHTMLContent += `
             <li class="tasks__item">
-                <button class="tasks__button tasks__button--toggleDone">
+                <button class="tasks__button tasks__button--toggleDone js-toggleDone">
                 ${task.done ? "✔" : ""}
                 </button>
                 <span class="${task.done ? "tasks__content--done" : ""}">
@@ -26,9 +41,9 @@
 
         document.querySelector(".js-tasks").innerHTML = tasksListHTMLContent;
 
+        bindToggleDoneEvents();
+
     };
-
-
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -40,7 +55,7 @@
             addNewTask(newTaskContent);
             newTaskElement.value = "";
         };
-        
+
         newTaskElement.focus();
     };
 
