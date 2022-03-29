@@ -1,5 +1,6 @@
 {
     let tasks = [];
+    let hideDoneTasks = false;
 
     const toggleTaskDone = (taskIndex) => {
         tasks[taskIndex].done = !tasks[taskIndex].done;
