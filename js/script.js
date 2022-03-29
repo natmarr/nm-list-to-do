@@ -32,6 +32,7 @@
             ...task,
             done: true,
         }));
+        render();
     };
     
     const toggleHideDoneTasks = () => {
@@ -61,8 +62,9 @@
 
     const renderTasks = () => {
         const taskToHTML = task => `
-        <li class="tasks__item
-        ${task.done && hideDoneTasks ? "tasks__item--hidden" : ""} js-task">
+        <li class="
+            tasks__item${task.done && hideDoneTasks ? "tasks__item--hidden" : ""} js-task
+        ">
         <button class="tasks__button tasks__button--toggleDone js-toggleDone">
         ${task.done ? "✔" : ""}
         </button>
@@ -84,6 +86,7 @@
             buttonsElement.innerHTML = "";
             return;
         }
+
         buttonsElement.innerHTML - `
         <button class="buttons__button js-toggleHideDoneTasks">
         ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
@@ -102,7 +105,8 @@
     
         if (markAllDoneButtons) {
             markAllDoneButtons.addEventListener("click", markAllTasksDone);
-        };
+        }
+        
         const toggleHideDoneTasksButton = document.querySelector(".js-toggleHideDoneTasks");
     
         if (toggleHideDoneTasksButton) {
