@@ -34,7 +34,7 @@
         }));
     };
     
-    const toggleHideTasks = () => {
+    const toggleHideDoneTasks = () => {
         hideDoneTasks = !hideDoneTasks;
         render();
     };
