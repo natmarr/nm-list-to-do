@@ -25,7 +25,7 @@
 
 .form__button:hover {
     background-color: hsl(180, 100%, 30%);
-    transition: scale(1.1);
+    transform: scale(1.1);
 }
 
 .form__button:active {
