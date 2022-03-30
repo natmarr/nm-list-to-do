@@ -45,17 +45,15 @@
 .tasks__button--remove {
     background-color: hsl(348, 83%, 47%);
     background-image: url(../images/bin.svg);
-    background-size: contain;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .tasks__button--remove:hover {
     background-color: hsl(348, 83%, 52%);
-    background-image: url(../images/bin.svg);
-    background-size: contain;
 }
 
 .tasks__button--remove:active {
     background-color: hsl(348, 83%, 57%);
-    background-image: url(../images/bin.svg);
-    background-size: contain;
 }
